@@ -1,0 +1,23 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "Mixpanel",
+	"Description": "This plugin interfaces with the Mixpanel analytics platform",
+	"Category": "Analytics",
+	"CreatedBy": "Get Set Games Inc.",
+	"CreatedByURL": "http://getsetgames.com",
+	"DocsURL": "https://github.com/getsetgames/Mixpanel",
+	"MarketplaceURL": "",
+	"Modules": [
+		{
+			"Name": "Mixpanel",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	],
+	"EnabledByDefault": false,
+	"CanContainContent": false,
+	"IsBetaVersion": false,
+	"Installed": false
+}
