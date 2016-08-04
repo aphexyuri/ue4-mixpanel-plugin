@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <item name="com.mixpanel.android.mpmetrics.Tweaks BOOLEAN_TYPE">
+    <annotation name="android.support.annotation.IntDef">
+      <val name="value" val="{com.mixpanel.android.mpmetrics.Tweaks.BOOLEAN_TYPE, com.mixpanel.android.mpmetrics.Tweaks.DOUBLE_TYPE, com.mixpanel.android.mpmetrics.Tweaks.LONG_TYPE, com.mixpanel.android.mpmetrics.Tweaks.STRING_TYPE}" />
+    </annotation>
+  </item>
+  <item name="com.mixpanel.android.mpmetrics.Tweaks DOUBLE_TYPE">
+    <annotation name="android.support.annotation.IntDef">
+      <val name="value" val="{com.mixpanel.android.mpmetrics.Tweaks.BOOLEAN_TYPE, com.mixpanel.android.mpmetrics.Tweaks.DOUBLE_TYPE, com.mixpanel.android.mpmetrics.Tweaks.LONG_TYPE, com.mixpanel.android.mpmetrics.Tweaks.STRING_TYPE}" />
+    </annotation>
+  </item>
+  <item name="com.mixpanel.android.mpmetrics.Tweaks LONG_TYPE">
+    <annotation name="android.support.annotation.IntDef">
+      <val name="value" val="{com.mixpanel.android.mpmetrics.Tweaks.BOOLEAN_TYPE, com.mixpanel.android.mpmetrics.Tweaks.DOUBLE_TYPE, com.mixpanel.android.mpmetrics.Tweaks.LONG_TYPE, com.mixpanel.android.mpmetrics.Tweaks.STRING_TYPE}" />
+    </annotation>
+  </item>
+  <item name="com.mixpanel.android.mpmetrics.Tweaks STRING_TYPE">
+    <annotation name="android.support.annotation.IntDef">
+      <val name="value" val="{com.mixpanel.android.mpmetrics.Tweaks.BOOLEAN_TYPE, com.mixpanel.android.mpmetrics.Tweaks.DOUBLE_TYPE, com.mixpanel.android.mpmetrics.Tweaks.LONG_TYPE, com.mixpanel.android.mpmetrics.Tweaks.STRING_TYPE}" />
+    </annotation>
+  </item>
+  <item name="com.mixpanel.android.mpmetrics.Tweaks void declareTweak(java.lang.String, java.lang.Object, int) 2">
+    <annotation name="android.support.annotation.IntDef">
+      <val name="value" val="{com.mixpanel.android.mpmetrics.Tweaks.BOOLEAN_TYPE, com.mixpanel.android.mpmetrics.Tweaks.DOUBLE_TYPE, com.mixpanel.android.mpmetrics.Tweaks.LONG_TYPE, com.mixpanel.android.mpmetrics.Tweaks.STRING_TYPE}" />
+    </annotation>
+  </item>
+  <item name="com.mixpanel.android.mpmetrics.Tweaks.TweakValue TweakValue(int, java.lang.Object, java.lang.Number, java.lang.Number, java.lang.Object) 0">
+    <annotation name="android.support.annotation.IntDef">
+      <val name="value" val="{com.mixpanel.android.mpmetrics.Tweaks.BOOLEAN_TYPE, com.mixpanel.android.mpmetrics.Tweaks.DOUBLE_TYPE, com.mixpanel.android.mpmetrics.Tweaks.LONG_TYPE, com.mixpanel.android.mpmetrics.Tweaks.STRING_TYPE}" />
+    </annotation>
+  </item>
+  <item name="com.mixpanel.android.mpmetrics.Tweaks.TweakValue type">
+    <annotation name="android.support.annotation.IntDef">
+      <val name="value" val="{com.mixpanel.android.mpmetrics.Tweaks.BOOLEAN_TYPE, com.mixpanel.android.mpmetrics.Tweaks.DOUBLE_TYPE, com.mixpanel.android.mpmetrics.Tweaks.LONG_TYPE, com.mixpanel.android.mpmetrics.Tweaks.STRING_TYPE}" />
+    </annotation>
+  </item>
+</root>
+
