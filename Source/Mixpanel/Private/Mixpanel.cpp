@@ -8,7 +8,7 @@
 #include "ISettingsModule.h"
 
 #if PLATFORM_IOS
-
+#import "Mixpanel/Mixpanel.h"
 #elif PLATFORM_ANDROID
 #include "Android/AndroidJNI.h"
 #include "AndroidApplication.h"
@@ -41,7 +41,7 @@ void FMixpanel::StartupModule()
     const UMixpanelSettings *settings = GetDefault<UMixpanelSettings>();
     
 #if PLATFORM_IOS
-
+    [Mixpanel sharedInstanceWithToken:settings->MixPanelTokeniOS];
 #elif PLATFORM_ANDROID
     // Initilization of Android is done through plugin APL file.
     //

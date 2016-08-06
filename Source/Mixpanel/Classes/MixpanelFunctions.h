@@ -14,4 +14,9 @@ class UMixpanelFunctions : public UObject {
 	
 public:
     
+    UFUNCTION(BlueprintCallable, meta = (Keywords = "Mixpanel analytics"), Category = "Mixpanel")
+    static void MixpanelIdentify(FString distinctID);
+    
+    UFUNCTION(BlueprintCallable, meta = (Keywords = "Mixpanel analytics"), Category = "Mixpanel")
+    static void MixpanelTrack(FString eventName, TArray<FString> eventKeys, TArray<FString> eventValues);
 };

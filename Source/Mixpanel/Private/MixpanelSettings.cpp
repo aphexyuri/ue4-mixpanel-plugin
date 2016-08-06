@@ -7,6 +7,8 @@
 #include "MixpanelSettings.h"
 
 UMixpanelSettings::UMixpanelSettings(const FObjectInitializer& ObjectInitializer)
-: Super(ObjectInitializer)
+: Super(ObjectInitializer),
+MixPanelTokeniOS(""),
+MixPanelTokenAndroid("")
 {
 }

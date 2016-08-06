@@ -14,4 +14,10 @@ class UMixpanelSettings : public UObject
 	
 public:
 	UMixpanelSettings(const FObjectInitializer& ObjectInitializer);
+    
+    UPROPERTY(Config, EditAnywhere, Category=General, meta=(DisplayName="Token iOS"))
+    FString MixPanelTokeniOS;
+    
+    UPROPERTY(Config, EditAnywhere, Category=General, meta=(DisplayName="Token Android"))
+    FString MixPanelTokenAndroid;
 };
