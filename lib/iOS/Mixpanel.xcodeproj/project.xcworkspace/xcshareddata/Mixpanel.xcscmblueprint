@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "74C6258B6C0C75112AB96374C7465F96A8341339",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "74C6258B6C0C75112AB96374C7465F96A8341339" : 0,
+    "6EBDBC6EEC91CB4D75AE91FE9EFC759886F9D941" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "C2F72E53-B186-4356-826A-8FBDE58901D3",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "74C6258B6C0C75112AB96374C7465F96A8341339" : "Mixpanel\/",
+    "6EBDBC6EEC91CB4D75AE91FE9EFC759886F9D941" : "..\/..\/.."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Mixpanel",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "lib\/iOS\/Mixpanel.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:getsetgames\/UnrealEngine.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6EBDBC6EEC91CB4D75AE91FE9EFC759886F9D941"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:getsetgames\/Mixpanel.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "74C6258B6C0C75112AB96374C7465F96A8341339"
+    }
+  ]
+}
