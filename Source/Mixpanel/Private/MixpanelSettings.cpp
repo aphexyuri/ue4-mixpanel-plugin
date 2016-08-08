@@ -8,7 +8,7 @@
 
 UMixpanelSettings::UMixpanelSettings(const FObjectInitializer& ObjectInitializer)
 : Super(ObjectInitializer),
-MixPanelTokeniOS(""),
-MixPanelTokenAndroid("")
+MixpanelTokeniOS(""),
+MixpanelTokenAndroid("")
 {
 }
