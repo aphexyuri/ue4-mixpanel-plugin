@@ -29,7 +29,10 @@
 	<!-- optional additions to the GameActivity imports in GameActivity.java -->
 	<gameActivityImportAdditions>
 		<insert>
+import org.json.JSONException;
+import org.json.JSONObject;
 
+import com.mixpanel.android.mpmetrics.MixpanelAPI; 
 		</insert>
 	</gameActivityImportAdditions>
 	
