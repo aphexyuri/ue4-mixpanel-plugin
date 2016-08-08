@@ -4,8 +4,7 @@
 	<!-- init section is always evaluated once per architecture -->
 	<init>
 		<log text="Mixpanel init"/>
-
-
+		<setStringFromProperty result="sMixpanelToken" ini="Engine" section="/Script/Mixpanel.MixpanelSettings" property="MixpanelTokenAndroid" default=""/>
 	</init>
 
 	<!-- optional updates applied to AndroidManifest.xml -->
