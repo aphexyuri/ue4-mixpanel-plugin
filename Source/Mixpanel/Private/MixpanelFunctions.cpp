@@ -30,6 +30,22 @@ bool ValidateValues(TArray<FString> &Keys, TArray<FString> &Values)
     return true;
 }
 
+void CreateKeyValueArrays(JNIEnv *Env, jobjectArray &jKeysArray, jobjectArray &jValuesArray, TArray<FString> keys, TArray<FString> values)
+{
+    for (uint32 Param = 0; Param < keys.Num(); Param++)
+    {
+        jstring StringValue = Env->NewStringUTF(TCHAR_TO_UTF8(*keys[Param]));
+        
+        Env->SetObjectArrayElement(jKeysArray, Param, StringValue);
+        Env->DeleteLocalRef(StringValue);
+        
+        StringValue = Env->NewStringUTF(TCHAR_TO_UTF8(*values[Param]));
+        
+        Env->SetObjectArrayElement(jValuesArray, Param, StringValue);
+        Env->DeleteLocalRef(StringValue);
+    }
+}
+
 void UMixpanelFunctions::MixpanelIdentify(FString distinctID)
 {
 #if PLATFORM_IOS
@@ -77,19 +93,8 @@ void UMixpanelFunctions::MixpanelTrack(FString eventName, TArray<FString> eventK
             
             jobjectArray EventKeysArray   = (jobjectArray)Env->NewObjectArray(eventKeys.Num(),   FJavaWrapper::JavaStringClass, NULL);
             jobjectArray EventValuesArray = (jobjectArray)Env->NewObjectArray(eventValues.Num(), FJavaWrapper::JavaStringClass, NULL);
-            
-            for (uint32 Param = 0; Param < EventKeysArray.Num(); Param++)
-            {
-                jstring StringValue = Env->NewStringUTF(TCHAR_TO_UTF8(*eventKeys[Param]));
-                
-                Env->SetObjectArrayElement(EventKeysArray, Param, StringValue);
-                Env->DeleteLocalRef(StringValue);
-                
-                StringValue = Env->NewStringUTF(TCHAR_TO_UTF8(*eventValues[Param]));
-                
-                Env->SetObjectArrayElement(EventValuesArray, Param, StringValue);
-                Env->DeleteLocalRef(StringValue);
-            }
+
+            CreateKeyValueArrays(Env, EventKeysArray, EventValuesArray, eventKeys, eventValues);
             
             FJavaWrapper::CallObjectMethod(Env, FJavaWrapper::GameActivityThis, Method, EventKeysArray, EventValuesArray);
             
@@ -103,3 +108,42 @@ void UMixpanelFunctions::MixpanelTrack(FString eventName, TArray<FString> eventK
         UE_LOG(LogMixpanel, Log, TEXT("keys and/or value arguments are empty or nil"));
     }
 }
+
+void UMixpanelFunctions::MixpanelTrackCharge(float charge, TArray<FString> eventKeys, TArray<FString> eventValues)
+{
+    if ( ValidateValues(eventKeys, eventValues) )
+    {
+#if PLATFORM_IOS
+        NSDictionary *p = CreateNSDictionary(eventKeys, eventValues);
+        
+        Mixpanel *mixpanel = [Mixpanel sharedInstance];
+       
+        [mixpanel trackCharge:[NSNumber numberWithFloat:charge] properties:p]
+        
+#elif PLATFORM_ANDROID
+        if (JNIEnv* Env = FAndroidApplication::GetJavaEnv())
+        {
+            static jmethodID Method = FJavaWrapper::FindMethod(Env,
+                                                               FJavaWrapper::GameActivityClassID,
+                                                               "AndroidThunkJava_MixpanelTrackCharge",
+                                                               "(Ljava/lang/String;[java/lang/String;[java/lang/String;)V",
+                                                               false);
+            
+            jobjectArray EventKeysArray   = (jobjectArray)Env->NewObjectArray(eventKeys.Num(),   FJavaWrapper::JavaStringClass, NULL);
+            jobjectArray EventValuesArray = (jobjectArray)Env->NewObjectArray(eventValues.Num(), FJavaWrapper::JavaStringClass, NULL);
+            
+            CreateKeyValueArrays(Env, EventKeysArray, EventValuesArray, eventKeys, eventValues);
+            
+            FJavaWrapper::CallObjectMethod(Env, FJavaWrapper::GameActivityThis, Method, EventKeysArray, EventValuesArray);
+            
+            Env->DeleteLocalRef(EventKeysArray);
+            Env->DeleteLocalRef(EventValuesArray);
+        }
+#endif
+    }
+    else
+    {
+        UE_LOG(LogMixpanel, Log, TEXT("keys and/or value arguments are empty or nil"));
+    }
+}
+

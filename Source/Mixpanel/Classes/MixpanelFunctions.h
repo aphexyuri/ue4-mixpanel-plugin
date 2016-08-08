@@ -19,4 +19,8 @@ public:
     
     UFUNCTION(BlueprintCallable, meta = (Keywords = "Mixpanel analytics"), Category = "Mixpanel")
     static void MixpanelTrack(FString eventName, TArray<FString> eventKeys, TArray<FString> eventValues);
+    
+    UFUNCTION(BlueprintCallable, meta = (Keywords = "Mixpanel analytics"), Category = "Mixpanel")
+    static void MixpanelTrackCharge(float charge, TArray<FString> eventKeys, TArray<FString> eventValues);
+    
 };
