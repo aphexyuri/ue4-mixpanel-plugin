@@ -160,7 +160,9 @@ void AndroidThunkJava_MixpanelTrackCharge(Float charge, String[] keys, String[] 
 
 	<!-- optional additions to GameActivity onActivityResult in GameActivity.java -->
 	<gameActivityOnActivityResultAdditions>
+		<insert>
 
+		</insert>
 	</gameActivityOnActivityResultAdditions>
 	
 	<!-- optional libraries to load in GameActivity.java before libUE4.so -->
