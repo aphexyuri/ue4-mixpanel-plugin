@@ -40,6 +40,69 @@ import com.mixpanel.android.mpmetrics.MixpanelAPI;
 	<!-- optional additions to the GameActivity class in GameActivity.java -->
 	<gameActivityClassAdditions>
 		<insert>
+String mixpanelToken = "</insert><insertValue value="$S(sMixpanelToken)" /><insert>";
+
+MixpanelAPI mMixpanel = MixpanelAPI.getInstance(this.getApplicationContext(), mixpanelToken);
+
+void AndroidThunkJava_MixpanelTrack(String eventName, String[] keys, String[] values)
+{
+	try {
+        JSONObject props = new JSONObject();
+
+		for (int i = 0; i &lt; keys.length; i++)
+		{
+			props.put(keys[i], values[i]);
+    	}
+
+        mMixpanel.track("MainActivity - onCreate called", props);
+    } catch (JSONException e) {
+        //Log.e("MYAPP", "Unable to add properties to JSONObject", e);
+    }
+}
+
+void AndroidThunkJava_MixpanelTimedTrack(String eventName)
+{
+
+}
+
+void AndroidThunkJava_MixpanelIdentify(String distinctID)
+{
+	mMixpanel.identify(distinctID);
+}
+
+void AndroidThunkJava_MixpanelRegisterSuperProperties(String[] keys, String[] values)
+{
+	try {
+		JSONObject props = new JSONObject();
+		
+		for (int i = 0; i &lt; keys.length; i++)
+		{
+			props.put(keys[i], values[i]);
+		}
+
+		mMixpanel.registerSuperProperties(props);
+	 } catch (JSONException e) {
+
+	 }
+}
+
+void AndroidThunkJava_MixpanelTrackCharge(Float charge, String[] keys, String[] values)
+{
+	try {
+		JSONObject props = new JSONObject();
+
+		for (int i = 0; i &lt; keys.length; i++)
+		{
+			props.put(keys[i], values[i]);
+		}
+
+		//properties.put("$time", "2012-01-02T00:00:00");
+		mMixpanel.getPeople().trackCharge(charge, props);
+	 } catch (JSONException e) {
+
+	 }
+}
+
 
 		</insert>
 	</gameActivityClassAdditions>
