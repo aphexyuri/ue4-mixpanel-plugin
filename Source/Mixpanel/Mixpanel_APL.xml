@@ -20,6 +20,10 @@
 -dontwarn com.mixpanel.** 
 		</insert>
 	</proguardAdditions>
+
+	<prebuildCopies>
+		<copyDir src="$S(EngineDir)/Plugins/GSG/Mixpanel/lib/Android/" dst="$S(BuildDir)" />
+	</prebuildCopies>
 	
 	<!-- optional files or directories to copy to Intermediate/Android/APK -->
  	<resourceCopies>
