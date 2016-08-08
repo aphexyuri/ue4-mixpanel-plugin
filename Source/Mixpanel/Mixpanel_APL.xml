@@ -9,7 +9,9 @@
 
 	<!-- optional updates applied to AndroidManifest.xml -->
 	<androidManifestUpdates>
-
+		<addPermission android:name="android.permission.INTERNET" />
+		<addPermission android:name="android.permission.ACCESS_NETWORK_STATE" />
+		<addPermission android:name="android.permission.BLUETOOTH" />
 	</androidManifestUpdates> 
 
 	<!-- optional additions to proguard -->
