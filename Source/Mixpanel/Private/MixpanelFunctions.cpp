@@ -30,6 +30,7 @@ bool ValidateValues(TArray<FString> &Keys, TArray<FString> &Values)
     return true;
 }
 
+#if PLATFORM_ANDROID
 void CreateKeyValueArrays(JNIEnv *Env, jobjectArray &jKeysArray, jobjectArray &jValuesArray, TArray<FString> keys, TArray<FString> values)
 {
     for (uint32 Param = 0; Param < keys.Num(); Param++)
@@ -45,6 +46,7 @@ void CreateKeyValueArrays(JNIEnv *Env, jobjectArray &jKeysArray, jobjectArray &j
         Env->DeleteLocalRef(StringValue);
     }
 }
+#endif
 
 void UMixpanelFunctions::MixpanelIdentify(FString distinctID)
 {
