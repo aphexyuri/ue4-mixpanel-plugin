@@ -17,7 +17,7 @@
 	<!-- optional additions to proguard -->
 	<proguardAdditions>
 		<insert>
-
+-dontwarn com.mixpanel.** 
 		</insert>
 	</proguardAdditions>
 	
