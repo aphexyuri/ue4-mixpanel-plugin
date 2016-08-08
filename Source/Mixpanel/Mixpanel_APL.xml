@@ -126,7 +126,7 @@ void AndroidThunkJava_MixpanelTrackCharge(Float charge, String[] keys, String[] 
 	<!-- optional additions to GameActivity onDestroy in GameActivity.java -->
 	<gameActivityOnDestroyAdditions>
 		<insert>
-		
+mMixpanel.flush();
 		</insert>
 	</gameActivityOnDestroyAdditions>
 	
